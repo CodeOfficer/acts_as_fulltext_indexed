@@ -1,0 +1,7 @@
+acts_as_fulltext_indexed Readme
+----------------------------------------------------------------
+* Web:        http://www.codeofficer.com/
+* Email:      spam*@*codeofficer*dot*com
+* Original:   http://blog.antiarc.net/2007/05/01/introducing-acts_as_fulltext_indexed/
+
+my fork adds compatibility for geokit's :origin and :within finder options
