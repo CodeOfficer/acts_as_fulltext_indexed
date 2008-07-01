@@ -1,3 +1,4 @@
 == 07-01-2008 initial import
  
  * added original files
+ * added ability to accept :within and :origin finder option keys

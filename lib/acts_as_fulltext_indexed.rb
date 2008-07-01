@@ -32,7 +32,7 @@ module ActiveRecord
 		
 			module SingletonMethods
 				def search(tokens, options = {}, transform = true)
-					options.assert_valid_keys :conditions, :order, :limit, :include
+					options.assert_valid_keys :conditions, :order, :limit, :include, :origin, :within
 					token_list = tokens.strip
 					if transform then
 						token_list = "+" + tokens.downcase.split(" ").collect {|c| c.strip }.uniq.sort.join("* +") + "*"
@@ -42,7 +42,7 @@ module ActiveRecord
 					conditions << " AND #{sanitize_sql(options.delete(:conditions))}" if options[:conditions]
 					options[:include] ||= []
 					
-					valid_keys = [:include, :order, :limit, :offset]
+					valid_keys = [:include, :order, :limit, :offset, :origin, :within]
 					options.reject! {|k, v| !valid_keys.include? k }
 					options[:include] = [:fulltext_index] + options[:include]
 					options[:conditions] = conditions					
