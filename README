@@ -1,7 +1,19 @@
-acts_as_fulltext_indexed Readme
+Fork of acts_as_fulltext_indexed: Readme
 ----------------------------------------------------------------
 * Web:        http://www.codeofficer.com/
 * Email:      spam*@*codeofficer*dot*com
 * Original:   http://blog.antiarc.net/2007/05/01/introducing-acts_as_fulltext_indexed/
 
-my fork adds compatibility for geokit's :origin and :within finder options
+This fork adds compatibility for geokit's :origin and :within finder options
+
+So you can do:
+  
+@listings = Job.search( params[:search_terms], 
+  {
+    :origin => etc,
+    :within => etc,
+    :conditions => etc,
+    :order => etc, 
+    :limit => etc
+  }
+)
